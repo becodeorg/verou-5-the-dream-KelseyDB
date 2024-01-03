@@ -42,36 +42,43 @@
     $result = $amount * 1;
   }
 ?>
+<h1>Currency Converter</h1>
+
   <form action="" method="POST">
-    <div id="inputCurr">
-      <label for="amount">Enter amount:</label> 
+      <div class="container">
+        <div class="inputCurr">
+          <label for="amount">Enter amount:</label> 
+          <br>
+          <input type="number" name="amount"> 
+        </div>
+        <br>
+        <br>
+        <div class="from">
+          <label for="curr1">From:</label>
+          <select name="curr1" id="curr1">
+            <option value="CHF" selected >CHF</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+          </select>
+        </div>
+        <br>
+        <br>
+        <div class="to">
+          <label for="curr2">To:</label>
+          <select name="curr2" id="curr2">
+          <option value="CHF">CHF</option>
+          <option value="USD">USD</option>
+          <option value="EUR" selected>EUR</option>
+          </select>
+        </div>
       <br>
       <br>
-      <input type="number" name="amount"> 
+      <input type="submit" name="submit" value="Convert">
       <br>
       <br>
-      <label for="curr1">From:</label>
-      <select name="curr1" id="curr1">
-        <option value="CHF" selected >CHF</option>
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-      </select>
-      <br>
-      <br>
-    </div>
-      <label for="curr2">To:</label>
-      <select name="curr2" id="curr2">
-      <option value="CHF">CHF</option>
-      <option value="USD">USD</option>
-      <option value="EUR" selected>EUR</option>
-    </select>
-    <br>
-    <br>
-    <input type="submit" name="submit" value="Convert">
-    <br>
-    <br>
     <?php echo $amount, " ", $curr1 ?>
-    <p>Converted amount:  <?php echo $result, " ", $curr2?></p>
+    <p>Converted to:  <?php echo $result, " ", $curr2?></p>
+    </div>
   </form>
 </body>
 </html>
